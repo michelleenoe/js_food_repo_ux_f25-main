@@ -1,17 +1,15 @@
 import { BASE_URL } from "./info.js";
 const DEFAULT_RECIPES = 10;
 
-
 const showRandomRecipes = async (numRecipes = DEFAULT_RECIPES) => {
-const fragment = document.createDocumentFragment();
-    let recipeList = "";
 
+    const fragment = document.createDocumentFragment();
     for (let index = 0; index < numRecipes; index++) {
+
         await fetch(`${BASE_URL}/random.php`)
         .then(response => response.json())
         .then(data => {
             data = data.meals[0];
-
 
             const card = document.querySelector('#recipe-card').content.cloneNode(true);
 
@@ -21,21 +19,17 @@ const fragment = document.createDocumentFragment();
             img.setAttribute('src', `${data.strMealThumb}/preview`);
             img.setAttribute('alt', data.strMeal);
 
-            card.querySelector('.pill:first-of type').innerText = data.strCategory;
+            card.querySelector('.pill:first-of-type').innerText = data.strCategory;
             card.querySelector('.pill:last-of-type').innerText = data.strArea;
 
             fragment.append(card);
-       
         })
         .catch(error => console.log(error));
-        document.querySelector('#recipe-list').append(fragment);
-  
-
     }
+    document.querySelector('#recipe-list').append(fragment);
 };
 
 showRandomRecipes();
-
 
 // const showRandomRecipes = async (numRecipes = DEFAULT_RECIPES) => {
 //   const fragment = document.createDocumentFragment();
