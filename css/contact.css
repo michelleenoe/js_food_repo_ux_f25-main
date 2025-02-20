@@ -1,3 +1,26 @@
+@media (min-width: 640px) {
+    #wrapper {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        gap: 1rem;
+        > section {
+            flex: 1 0 auto;
+        }
+    }
+} 
+
+
+    #contact_info > div {
+        width: 48%;
+    }
+
+    #contact_info > div:first-of-type {
+        margin-right: 2%;
+    }
+
+
+
 #contact_info {
     margin-bottom: 1rem;
 }
@@ -40,3 +63,30 @@ form {
         }
     }
 }
+
+#contact_message {
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: auto;
+
+    header {
+        display:flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        gap:1rem;
+        padding:0;
+    }
+    
+        button.close {
+            border:none;
+            height: 0.5rem;
+            font-size: 1.3rem;
+            background-color: var(--colorBgMain)
+    }
+}
+
+ul li {
+margin-left: 1.5rem;
+list-style-type:none;
+}
+

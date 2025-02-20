@@ -4,8 +4,10 @@
 :root {
     --colorMain: black;
     --colorSecondary: darkgreen;
-    --colorBgMain: #FDFDFD;
-
+    --colorBgMain: #F2ECE0;
+    --imgThumbnailDimension: 150px;
     --fontMain: 'Open Sans', Arial, sans serif;
     --fontTitle: DynaPuff, serif;
+    --maxBodyWidth: 1024px;
+    --cardWidth: 250px;
 }
